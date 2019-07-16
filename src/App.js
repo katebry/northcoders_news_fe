@@ -1,17 +1,16 @@
 import React from "react";
 import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 import { Router } from "@reach/router";
-import Navbar from "./components/Layout/Navbar";
+import NavBar from "./components/Layout/Navbar";
 import Articles from "./components/Components/Articles";
-import Header from "./components/Layout/Header";
 
 class App extends React.Component {
   render() {
     return (
       <>
         <nav>
-          <Header />
-          <Navbar />
+          <NavBar />
         </nav>
         <Router>
           <Articles path="/articles" />
