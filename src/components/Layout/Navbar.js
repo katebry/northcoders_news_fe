@@ -22,9 +22,7 @@ function NavBar() {
               Topics
             </Dropdown.Toggle>
             <Dropdown.Menu>
-              <Dropdown.Item href="/articles/topics/coding">
-                Coding
-              </Dropdown.Item>
+              <Dropdown.Item>Coding</Dropdown.Item>
               <Dropdown.Item href="/articles/topics/cooking">
                 Cooking
               </Dropdown.Item>
