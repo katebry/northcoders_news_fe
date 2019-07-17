@@ -2,13 +2,14 @@ import React from "react";
 import * as api from "../../api";
 import Loading from "./Loading";
 import ErrorHandler from "../ErrorHandling/ErrorHandler";
-import TopRatedArticles from "./TopRatedArticles";
+import { Link } from "@reach/router";
 
 class Articles extends React.Component {
   state = {
     articles: null,
     isLoading: true,
-    err: null
+    err: null,
+    sort_by: null
   };
 
   render() {
@@ -17,7 +18,8 @@ class Articles extends React.Component {
     if (isLoading) return <Loading />;
     return (
       <>
-        <h2>Articles</h2>
+        <button>votes</button>
+        <h2>ARTICLES</h2>
         {articles ? (
           articles.map(
             ({
@@ -33,7 +35,9 @@ class Articles extends React.Component {
               return (
                 <div key={article_id}>
                   <ul>
-                    <h3>{title}</h3>
+                    <h3>
+                      <Link to={`/articles/${article_id}`}>{title}</Link>
+                    </h3>
                     <h3>{author}</h3>
                     <h3>{topic}</h3>
                     <h3>{time}</h3>
@@ -53,7 +57,7 @@ class Articles extends React.Component {
 
   componentDidMount() {
     api
-      .getArticles()
+      .getArticles({ topic: this.props.topic, author: this.props.author })
       .then(articles => {
         this.setState({ articles, isLoading: false });
       })
