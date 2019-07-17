@@ -3,17 +3,24 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Router } from "@reach/router";
 import NavBar from "./components/Layout/Navbar";
-import Articles from "./components/Components/Articles";
+import Homepage from "./components/Components/Homepage";
+import Article from "../src/components/Components/Article";
+import Articles from "../src/components/Components/Articles";
 
 class App extends React.Component {
+  state = {
+    loggedInAs: "jessjelly"
+  };
   render() {
+    const { loggedInAs } = this.state;
     return (
       <>
-        <nav>
-          <NavBar />
-        </nav>
+        <NavBar />
         <Router>
-          <Articles path="/articles" />
+          <Homepage path="/" loggedInAs={loggedInAs} />
+          <Articles path="/articles" loggedInAs={loggedInAs} />
+          <Article path="/articles/:article_id" loggedInAs={loggedInAs} />
+          <Articles path="/topics/:topic/articles" loggedInAs={loggedInAs} />
         </Router>
       </>
     );
