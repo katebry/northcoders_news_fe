@@ -19,8 +19,12 @@ class App extends React.Component {
         <Router>
           <Homepage path="/" loggedInAs={loggedInAs} />
           <Articles path="/articles" loggedInAs={loggedInAs} />
+          <Articles path="/articles/topics/:topic" loggedInAs={loggedInAs} />
           <Article path="/articles/:article_id" loggedInAs={loggedInAs} />
-          <Articles path="/topics/:topic/articles" loggedInAs={loggedInAs} />
+          <Article
+            path="/aricles/:article_id/comments"
+            loggedInAs={loggedInAs}
+          />
         </Router>
       </>
     );
