@@ -6,6 +6,7 @@ import NavBar from "./components/Layout/Navbar";
 import Homepage from "./components/Components/Homepage";
 import Article from "../src/components/Components/Article";
 import Articles from "../src/components/Components/Articles";
+import NoMatch from "../src/components/ErrorHandling/NoMatch";
 
 class App extends React.Component {
   state = {
@@ -22,9 +23,10 @@ class App extends React.Component {
           <Articles path="/articles/topics/:topic" loggedInAs={loggedInAs} />
           <Article path="/articles/:article_id" loggedInAs={loggedInAs} />
           <Article
-            path="/aricles/:article_id/comments"
+            path="/articles/:article_id/comments"
             loggedInAs={loggedInAs}
           />
+          <NoMatch default />
         </Router>
       </>
     );
