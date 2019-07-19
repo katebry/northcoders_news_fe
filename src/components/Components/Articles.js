@@ -52,35 +52,3 @@ class Articles extends React.Component {
 }
 
 export default Articles;
-
-/*
-
-SORTING:
-
-functional component Sorter
-dropdown:
-<select onChange={setSort}> 
-  <option value="created_at"> Date </option>
-  <option value="votes"> Votes </votes>
-</select>
-
-Articles.js
-
-<Sorter setSort={this.setSort}/>
-
-(need to pass in setSort within the articles section)
-
-setSort = (e) => {
-  const { value } = e.target;
-  this.setState({ sortBy: value }) 
-}
-
---> add a key to state called sortBy
-
-componentDidUpdate(prevProps, prevState) {
-  if (prevProps.topic !== this.props.topic || prevState.sortBy !== this.state.sortBy) {
-    this.fetchArticles(); 
-  }
-}
-
-*/
