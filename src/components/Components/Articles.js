@@ -2,7 +2,7 @@ import React from "react";
 import * as api from "../../api";
 import Loading from "./Loading";
 import ErrorHandler from "../ErrorHandling/ErrorHandler";
-import { Link } from "@reach/router";
+import ArticleCard from "../Layout/ArticleCard";
 
 class Articles extends React.Component {
   state = {
@@ -18,46 +18,30 @@ class Articles extends React.Component {
     if (isLoading) return <Loading />;
     return (
       <>
-        <button>votes</button>
-        <h2>ARTICLES</h2>
-        {articles ? (
-          articles.map(
-            ({
-              author,
-              title,
-              article_id,
-              topic,
-              created_at,
-              votes,
-              comment_count
-            }) => {
-              const time = created_at.slice(0, 10);
-              return (
-                <div key={article_id}>
-                  <ul>
-                    <h3>
-                      <Link to={`/articles/${article_id}`}>{title}</Link>
-                    </h3>
-                    <h3>{author}</h3>
-                    <h3>{topic}</h3>
-                    <h3>{time}</h3>
-                    <h3>{votes}</h3>
-                    <h3>{comment_count}</h3>
-                  </ul>
-                </div>
-              );
-            }
-          )
-        ) : (
-          <h2>Loading articles...</h2>
-        )}
+        <div className="row">
+          {articles ? (
+            articles.map(article => (
+              <ArticleCard
+                key={article.article_id}
+                title={article.title}
+                author={article.author}
+                topic={article.topic}
+                votes={article.votes}
+                created_at={article.created_at}
+              />
+            ))
+          ) : (
+            <h2>Loading articles...</h2>
+          )}
+        </div>
       </>
     );
   }
 
   componentDidMount() {
+    const { topic, author } = this.props;
     api
-      .getArticles({ topic: this.props.topic, author: this.props.author })
+      .getArticles({ topic, author })
       .then(articles => {
         this.setState({ articles, isLoading: false });
       })
@@ -68,3 +52,35 @@ class Articles extends React.Component {
 }
 
 export default Articles;
+
+/*
+
+SORTING:
+
+functional component Sorter
+dropdown:
+<select onChange={setSort}> 
+  <option value="created_at"> Date </option>
+  <option value="votes"> Votes </votes>
+</select>
+
+Articles.js
+
+<Sorter setSort={this.setSort}/>
+
+(need to pass in setSort within the articles section)
+
+setSort = (e) => {
+  const { value } = e.target;
+  this.setState({ sortBy: value }) 
+}
+
+--> add a key to state called sortBy
+
+componentDidUpdate(prevProps, prevState) {
+  if (prevProps.topic !== this.props.topic || prevState.sortBy !== this.state.sortBy) {
+    this.fetchArticles(); 
+  }
+}
+
+*/
