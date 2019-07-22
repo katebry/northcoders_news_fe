@@ -2,6 +2,7 @@ import React from "react";
 import * as api from "../../api";
 import Loading from "./Loading";
 import ErrorHandler from "../ErrorHandling/ErrorHandler";
+import ArticleComments from "./ArticleComments";
 
 class Article extends React.Component {
   state = {
@@ -9,6 +10,7 @@ class Article extends React.Component {
     isLoading: true,
     err: null
   };
+
   render() {
     const { article, isLoading, err } = this.state;
     if (err) return <ErrorHandler err={err} />;
@@ -17,6 +19,8 @@ class Article extends React.Component {
       <>
         <h2>{article.title}</h2>
         <h3>{article.body}</h3>
+        <h5>{article.votes}</h5>
+        <ArticleComments article_id={this.state.article.article_id} />
       </>
     );
   }

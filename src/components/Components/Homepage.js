@@ -1,14 +1,14 @@
 import React from "react";
 import Articles from "./Articles";
-import TopRatedArticles from "./TopRatedArticles";
+// import TopRatedArticles from "./TopRatedArticles";
 
-function Homepage() {
+const Homepage = () => {
   return (
     <>
-      <TopRatedArticles />
+      {/* <TopRatedArticles /> */}
       <Articles />
     </>
   );
-}
+};
 
 export default Homepage;
