@@ -1,0 +1,15 @@
+.articleRow .articleCard {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  padding: 1em;
+  grid-gap: 1em;
+  grid-auto-rows: minmax(100px auto);
+}
+
+.commentRow .commentCard {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 1em;
+  grid-gap: 1em;
+  grid-auto-rows: minmax(100px auto);
+}

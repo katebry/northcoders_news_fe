@@ -18,7 +18,7 @@ class Articles extends React.Component {
     if (isLoading) return <Loading />;
     return (
       <>
-        <div className="row">
+        <div className="articleRow">
           {articles ? (
             articles.map(article => (
               <ArticleCard

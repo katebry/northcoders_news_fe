@@ -3,6 +3,7 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Router } from "@reach/router";
 import NavBar from "./components/Layout/Navbar";
+import Header from "./components/Layout/Header";
 import Homepage from "./components/Components/Homepage";
 import Article from "../src/components/Components/Article";
 import Articles from "../src/components/Components/Articles";
@@ -17,6 +18,7 @@ class App extends React.Component {
     return (
       <>
         <NavBar />
+        <Header />
         <Router>
           <Homepage path="/" loggedInAs={loggedInAs} />
           <Articles path="/articles" loggedInAs={loggedInAs} />

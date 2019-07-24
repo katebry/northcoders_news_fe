@@ -16,7 +16,7 @@ class ArticleComments extends React.Component {
     if (err) return <ErrorHandler err={err} />;
     if (isLoading) return <Loading />;
     return (
-      <div className="row">
+      <div className="commentRow">
         {comments ? (
           comments.map(comment => (
             <CommentCard
