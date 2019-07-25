@@ -9,7 +9,8 @@ class Articles extends React.Component {
     articles: null,
     isLoading: true,
     err: null,
-    sort_by: null
+    sort_by: null,
+    order: "desc"
   };
 
   render() {
