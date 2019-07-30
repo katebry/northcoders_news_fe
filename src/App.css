@@ -13,3 +13,14 @@
   grid-gap: 1em;
   grid-auto-rows: minmax(100px auto);
 }
+
+.articleCardSingle {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 1em;
+  background-color: #c31231;
+}
+
+.loadingGif {
+  margin: auto;
+}
