@@ -33,4 +33,10 @@
 
 .navBar {
   position: fixed;
+  z-index: 1;
+}
+
+.siteHeader {
+  padding: 1em;
+  text-align: center;
 }
