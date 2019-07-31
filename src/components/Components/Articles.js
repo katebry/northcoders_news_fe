@@ -3,6 +3,7 @@ import * as api from "../../api";
 import Loading from "./Loading";
 import ErrorHandler from "../ErrorHandling/ErrorHandler";
 import ArticleCard from "../Layout/ArticleCard";
+import ArticleDropdown from "./ArticlesDropdown";
 
 class Articles extends React.Component {
   state = {
@@ -19,6 +20,7 @@ class Articles extends React.Component {
     if (isLoading) return <Loading />;
     return (
       <>
+        <ArticleDropdown setSort={this.setSort} />
         <div className="articleRow">
           {articles ? (
             articles.map(article => (
@@ -51,6 +53,32 @@ class Articles extends React.Component {
         this.setState({ err });
       });
   }
+
+  componentDidUpdate(prevProps, prevState) {
+    const { sort_by, order } = this.state;
+    const { topic, author } = this.props;
+    if (
+      sort_by !== prevState.sort_by ||
+      topic !== prevProps.topic ||
+      order !== prevState.order ||
+      author !== prevProps.author
+    ) {
+      api
+        .getArticles({ sort_by, topic, order, author })
+        .then(articles => {
+          this.setState({ articles, isLoading: false });
+        })
+        .catch(err => {
+          this.setState({ err });
+        });
+    }
+  }
+
+  setSort = e => {
+    e.preventDefault();
+    const { value } = e.target;
+    this.setState({ sort_by: value });
+  };
 }
 
 export default Articles;

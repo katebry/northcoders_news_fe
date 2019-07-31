@@ -2,9 +2,9 @@ import axios from "axios";
 
 const BASE_URL = "https://ncnews-round.herokuapp.com/api";
 
-export const getArticles = async ({ sort_by, topic, order, author, limit }) => {
+export const getArticles = async ({ sort_by, topic, order, author }) => {
   const { data } = await axios.get(`${BASE_URL}/articles`, {
-    params: { sort_by, topic, order, author, limit }
+    params: { sort_by, topic, order, author }
   });
   return data.articles;
 };
