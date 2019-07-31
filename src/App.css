@@ -30,3 +30,7 @@
 .loadingGif {
   margin: auto;
 }
+
+.navBar {
+  position: fixed;
+}

@@ -3,17 +3,20 @@ import { Link } from "@reach/router";
 
 const NavBar = () => {
   return (
-    <nav>
-      <Link to="/">
-        <button>Home</button>
-      </Link>
-      <div className="drop-down">
-        <button className="drop-down-button">Topics</button>
-        <div className="drop-down-content">
-          <Link to="/articles/topics/coding">Coding</Link>
-          <Link to="/articles/topics/cooking">Cooking</Link>
-          <Link to="/articles/topics/football">Football</Link>
-        </div>
+    <nav className="navBar">
+      <div className="links">
+        <Link to="/">
+          <button>Home</button>
+        </Link>
+        <Link to="/articles/topics/coding">
+          <button>Coding</button>
+        </Link>
+        <Link to="/articles/topics/cooking">
+          <button>Cooking</button>
+        </Link>
+        <Link to="/articles/topics/football">
+          <button>Football</button>
+        </Link>
       </div>
     </nav>
   );
