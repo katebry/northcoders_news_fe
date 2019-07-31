@@ -21,6 +21,12 @@
   background-color: #c31231;
 }
 
+.articleSorterDropdown {
+  display: grid;
+  justify-items: end;
+  padding: 0.5em;
+}
+
 .loadingGif {
   margin: auto;
 }
