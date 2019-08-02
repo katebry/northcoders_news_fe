@@ -3,7 +3,7 @@ import * as api from "../../api";
 import Loading from "./Loading";
 import ErrorHandler from "../ErrorHandling/ErrorHandler";
 import ArticleCard from "../Layout/ArticleCard";
-import ArticleDropdown from "./ArticlesDropdown";
+import ArticleDropdown from "./ArticleDropdown";
 
 class Articles extends React.Component {
   state = {

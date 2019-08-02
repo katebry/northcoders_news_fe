@@ -3,6 +3,7 @@ import Loading from "./Loading";
 import ErrorHandler from "../ErrorHandling/ErrorHandler";
 import * as api from "../../api";
 import CommentCard from "../Layout/CommentCard";
+import AddComment from "./AddComment";
 
 class ArticleComments extends React.Component {
   state = {
@@ -16,23 +17,33 @@ class ArticleComments extends React.Component {
     if (err) return <ErrorHandler err={err} />;
     if (isLoading) return <Loading />;
     return (
-      <div className="commentRow">
-        {comments ? (
-          comments.map(comment => (
-            <CommentCard
-              key={comment.comment_id}
-              body={comment.body}
-              author={comment.author}
-              created_at={comment.created_at}
-              votes={comment.votes}
-            />
-          ))
-        ) : (
-          <h2>Loading comments...</h2>
-        )}
-      </div>
+      <>
+        <AddComment
+          newComment={this.newComment}
+          handleSubmit={this.handleSubmit}
+          article_id={this.props.article_id}
+          loggedInAs={this.props.loggedInAs}
+          postComment={this.postComment}
+        />
+        <div className="commentRow">
+          {comments ? (
+            comments.map(comment => (
+              <CommentCard
+                key={comment.comment_id}
+                body={comment.body}
+                author={comment.author}
+                created_at={comment.created_at}
+                votes={comment.votes}
+              />
+            ))
+          ) : (
+            <h2>Loading comments...</h2>
+          )}
+        </div>
+      </>
     );
   }
+
   componentDidMount() {
     const { article_id } = this.props;
     api
@@ -44,6 +55,12 @@ class ArticleComments extends React.Component {
         this.setState({ err });
       });
   }
+
+  postComment = newComment => {
+    this.setState(state => {
+      return { comments: [newComment, ...state.comments] };
+    });
+  };
 }
 
 export default ArticleComments;
