@@ -20,3 +20,15 @@ export const getCommentsByArticle = async article_id => {
   );
   return data.comments;
 };
+
+export const postCommentToArticle = async ({
+  article_id,
+  loggedInAs,
+  newComment
+}) => {
+  const { data } = await axios.post(
+    `${BASE_URL}/articles/${article_id}/comments`,
+    { author: loggedInAs, body: newComment }
+  );
+  return data.comment;
+};
