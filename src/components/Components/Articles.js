@@ -26,7 +26,7 @@ class Articles extends React.Component {
             articles.map(article => (
               <ArticleCard
                 key={article.article_id}
-                title={article.title}
+                title={article.title.toUpperCase()}
                 author={article.author}
                 topic={article.topic}
                 votes={article.votes}

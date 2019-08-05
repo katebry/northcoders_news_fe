@@ -18,7 +18,7 @@ class Article extends React.Component {
     return (
       <>
         <div className="articleCardSingle">
-          <h2>{article.title}</h2>
+          <h2>{article.title.toUpperCase()}</h2>
           <h3>{article.body}</h3>
           <h5>{article.votes}</h5>
         </div>

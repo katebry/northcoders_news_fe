@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Roboto+Slab:400,700&display=swap");
 
 .App {
   font-family: "Roboto Slab", "serif";
@@ -30,7 +30,12 @@
   display: grid;
   grid-template-columns: 1fr;
   padding: 1em;
+  margin-left: 2em;
+  margin-right: 2em;
+  margin-bottom: 2em;
   background: rgba(255, 255, 255, 0.5);
+  border: 2px;
+  border-radius: 5px;
 }
 
 .articleSorterDropdown {
@@ -45,11 +50,11 @@
 }
 
 .navBar {
-  position: fixed;
-  z-index: 1;
-}
-
-.siteHeader {
-  padding: 1em;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-self: bottom;
+  background: #c41435;
+  width: 100%;
+  border: 2px solid white;
+  border-radius: 5px;
 }
