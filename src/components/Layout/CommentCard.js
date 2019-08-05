@@ -1,6 +1,8 @@
 import React from "react";
 import { Card } from "react-bootstrap";
 import deleteicon from "./deleteicon.png";
+import likeicon from "../Layout/likeicon.png";
+import dislikeicon from "../Layout/dislikeicon.png";
 import styled from "styled-components";
 
 const Button = styled.button`
@@ -33,17 +35,25 @@ const CommentCard = ({
           <Card.Text>{created_at}</Card.Text>
           <Card.Text>Votes: {votes}</Card.Text>
         </Card.Body>
-        <Button
-          className="deleteIcon"
-          disabled={loggedInAs !== author}
-          onClick={() => removeComment(comment_id)}
-        >
-          <img
-            src={deleteicon}
-            alt="bin icon"
-            style={{ width: "2em", height: "2em" }}
-          />
-        </Button>
+        <div className="commentButtonContainer">
+          <Button
+            className="deleteIcon"
+            disabled={loggedInAs !== author}
+            onClick={() => removeComment(comment_id)}
+          >
+            <img
+              src={deleteicon}
+              alt="bin icon"
+              style={{ width: "2em", height: "2em" }}
+            />
+          </Button>
+          <Button>
+            <img src={likeicon} alt="thumbs up" />
+          </Button>
+          <Button>
+            <img src={dislikeicon} alt="thumbs down" />
+          </Button>
+        </div>
       </Card>
     </div>
   );
