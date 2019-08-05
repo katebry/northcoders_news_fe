@@ -1,6 +1,19 @@
 import React from "react";
 import { Card } from "react-bootstrap";
 import deleteicon from "./deleteicon.png";
+import styled from "styled-components";
+
+const Button = styled.button`
+  display: inline-block;
+  border: 2px solid black;
+  border-radius: 3px;
+  margin: 1em;
+  max-width: 4em;
+  max-height: 5em;
+  &:hover {
+    background: rgba(195, 18, 49, 1);
+  }
+`;
 
 const CommentCard = ({
   body,
@@ -20,7 +33,7 @@ const CommentCard = ({
           <Card.Text>{created_at}</Card.Text>
           <Card.Text>Votes: {votes}</Card.Text>
         </Card.Body>
-        <button
+        <Button
           className="deleteIcon"
           disabled={loggedInAs !== author}
           onClick={() => removeComment(comment_id)}
@@ -30,7 +43,7 @@ const CommentCard = ({
             alt="bin icon"
             style={{ width: "2em", height: "2em" }}
           />
-        </button>
+        </Button>
       </Card>
     </div>
   );

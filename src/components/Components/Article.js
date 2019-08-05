@@ -16,15 +16,17 @@ class Article extends React.Component {
     if (err) return <ErrorHandler err={err} />;
     if (isLoading) return <Loading />;
     return (
-      <div className="articleCardSingle">
-        <h2>{article.title}</h2>
-        <h3>{article.body}</h3>
-        <h5>{article.votes}</h5>
+      <>
+        <div className="articleCardSingle">
+          <h2>{article.title}</h2>
+          <h3>{article.body}</h3>
+          <h5>{article.votes}</h5>
+        </div>
         <ArticleComments
           article_id={article.article_id}
           loggedInAs={this.props.loggedInAs}
         />
-      </div>
+      </>
     );
   }
 
