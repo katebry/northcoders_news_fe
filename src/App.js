@@ -8,7 +8,7 @@ import Homepage from "./components/Components/Homepage";
 import Article from "../src/components/Components/Article";
 import Articles from "../src/components/Components/Articles";
 import NoMatch from "../src/components/ErrorHandling/NoMatch";
-import backgroundImage from "../src/components/Layout/NCNEWSBACKGROUND.png";
+import backgroundImage from "../src/components/Layout/NCNEWS-background-pattern.png";
 
 class App extends React.Component {
   state = {
@@ -17,7 +17,7 @@ class App extends React.Component {
   render() {
     const { loggedInAs } = this.state;
     return (
-      <>
+      <div className="App">
         <NavBar />
         <Header />
         <div
@@ -32,7 +32,7 @@ class App extends React.Component {
             <NoMatch default />
           </Router>
         </div>
-      </>
+      </div>
     );
   }
 }
