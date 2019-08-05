@@ -1,5 +1,17 @@
 import React from "react";
 import * as api from "../../api";
+import styled from "styled-components";
+
+const Input = styled.input`
+  display: inline-block;
+  border: 2px solid black;
+  border-radius: 3px;
+  margin: 1em;
+  max-width: 6em;
+  &:hover {
+    background: rgba(195, 18, 49, 1);
+  }
+`;
 
 class AddComment extends React.Component {
   state = {
@@ -12,6 +24,7 @@ class AddComment extends React.Component {
         <label>
           Comment:{" "}
           <input
+            className="inputBox"
             required
             type="text"
             value={this.state.newComment}
@@ -19,7 +32,7 @@ class AddComment extends React.Component {
             onChange={this.handleChange}
           />
         </label>
-        <input className="submitButton" type="submit" value="Submit" />
+        <Input className="submitButton" type="submit" value="Submit" />
       </form>
     );
   }
@@ -41,7 +54,8 @@ class AddComment extends React.Component {
       })
       .then(postedComment => {
         this.props.postComment(postedComment);
-      });
+      })
+      .then(this.setState({ newComment: "" }));
   };
 }
 

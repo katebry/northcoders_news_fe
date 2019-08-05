@@ -13,10 +13,10 @@ const ArticleCard = ({
   return (
     <div className="articleCard">
       <Card>
+        <Card.Header>
+          <Link to={`/articles/${article_id}`}>{title}</Link>
+        </Card.Header>
         <Card.Body>
-          <Card.Title>
-            <Link to={`/articles/${article_id}`}>{title}</Link>
-          </Card.Title>
           <Card.Subtitle>{author}</Card.Subtitle>
           <Card.Text>{votes}</Card.Text>
           <Card.Text>

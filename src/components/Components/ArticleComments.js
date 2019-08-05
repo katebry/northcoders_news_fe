@@ -30,10 +30,13 @@ class ArticleComments extends React.Component {
             comments.map(comment => (
               <CommentCard
                 key={comment.comment_id}
+                comment_id={comment.comment_id}
                 body={comment.body}
                 author={comment.author}
                 created_at={comment.created_at}
                 votes={comment.votes}
+                loggedInAs={this.props.loggedInAs}
+                removeComment={this.removeComment}
               />
             ))
           ) : (
@@ -59,6 +62,15 @@ class ArticleComments extends React.Component {
   postComment = newComment => {
     this.setState(state => {
       return { comments: [newComment, ...state.comments] };
+    });
+  };
+
+  removeComment = commentIdToDelete => {
+    api.deleteCommentById(commentIdToDelete);
+    this.setState({
+      comments: this.state.comments.filter(
+        comment => comment.comment_id !== commentIdToDelete
+      )
     });
   };
 }
