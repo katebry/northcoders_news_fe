@@ -29,7 +29,7 @@ class App extends React.Component {
             <Articles path="/articles" loggedInAs={loggedInAs} />
             <Articles path="/articles/topics/:topic" loggedInAs={loggedInAs} />
             <Article path="/articles/:article_id" loggedInAs={loggedInAs} />
-            <NoMatch default />
+            <NoMatch default status="404" msg="Non-existent path" />
           </Router>
         </div>
       </div>
