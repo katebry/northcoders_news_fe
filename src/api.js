@@ -28,11 +28,26 @@ export const postCommentToArticle = async ({
 }) => {
   const { data } = await axios.post(
     `${BASE_URL}/articles/${article_id}/comments`,
-    { author: loggedInAs, body: newComment }
+    {
+      author: loggedInAs,
+      body: newComment
+    }
   );
   return data.comment;
 };
 
 export const deleteCommentById = async comment_id => {
   return axios.delete(`${BASE_URL}/comments/${comment_id}`);
+};
+
+export const patchVoteToArticle = async ({ article_id, voteCount }) => {
+  return axios.patch(`${BASE_URL}/articles/${article_id}`, {
+    inc_votes: voteCount
+  });
+};
+
+export const patchVoteToComment = async ({ comment_id, voteCount }) => {
+  return axios.patch(`${BASE_URL}/comments/${comment_id}`, {
+    inc_votes: voteCount
+  });
 };
