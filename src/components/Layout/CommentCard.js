@@ -1,9 +1,8 @@
 import React from "react";
 import { Card } from "react-bootstrap";
 import deleteicon from "./deleteicon.png";
-import likeicon from "../Layout/likeicon.png";
-import dislikeicon from "../Layout/dislikeicon.png";
 import styled from "styled-components";
+import Vote from "../Components/Vote";
 
 const Button = styled.button`
   display: inline-block;
@@ -47,12 +46,7 @@ const CommentCard = ({
               style={{ width: "2em", height: "2em" }}
             />
           </Button>
-          <Button>
-            <img src={likeicon} alt="thumbs up" />
-          </Button>
-          <Button>
-            <img src={dislikeicon} alt="thumbs down" />
-          </Button>
+          <Vote />
         </div>
       </Card>
     </div>
