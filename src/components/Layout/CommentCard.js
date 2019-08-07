@@ -1,8 +1,8 @@
 import React from "react";
 import { Card } from "react-bootstrap";
 import deleteicon from "./deleteicon.png";
-import styled from "styled-components";
 import Vote from "../Components/Vote";
+import styled from "styled-components";
 
 const Button = styled.button`
   display: inline-block;
