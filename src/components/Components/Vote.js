@@ -31,7 +31,6 @@ class Vote extends React.Component {
     const { err, voteChange } = this.state;
     const { loggedInAs, votes } = this.props;
     if (err) return <ErrorHandler err={err} />;
-    console.log(votes);
     return (
       <>
         <H5>Votes: {votes + voteChange}</H5>

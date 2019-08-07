@@ -1,7 +1,7 @@
 import React from "react";
+import * as api from "../../api";
 import Loading from "./Loading";
 import ErrorHandler from "../ErrorHandling/ErrorHandler";
-import * as api from "../../api";
 import CommentCard from "../Layout/CommentCard";
 import AddComment from "./AddComment";
 
