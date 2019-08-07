@@ -62,6 +62,8 @@ class ArticleComments extends React.Component {
   postComment = newComment => {
     this.setState(state => {
       return { comments: [newComment, ...state.comments] };
+    }).catch(err => {
+      this.setState({ err });
     });
   };
 

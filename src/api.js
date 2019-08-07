@@ -40,14 +40,16 @@ export const deleteCommentById = async comment_id => {
   return axios.delete(`${BASE_URL}/comments/${comment_id}`);
 };
 
-export const patchVoteToArticle = async ({ article_id, voteCount }) => {
-  return axios.patch(`${BASE_URL}/articles/${article_id}`, {
-    inc_votes: voteCount
+export const patchVoteToArticle = async (article_id, increment) => {
+  const { data } = await axios.patch(`${BASE_URL}/articles/${article_id}`, {
+    inc_votes: increment
   });
+  return data.article;
 };
 
-export const patchVoteToComment = async ({ comment_id, voteCount }) => {
-  return axios.patch(`${BASE_URL}/comments/${comment_id}`, {
-    inc_votes: voteCount
+export const patchVoteToComment = async (comment_id, increment) => {
+  const { data } = await axios.patch(`${BASE_URL}/comments/${comment_id}`, {
+    inc_votes: increment
   });
+  return data.comment;
 };

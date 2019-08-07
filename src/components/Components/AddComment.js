@@ -15,7 +15,8 @@ const Input = styled.input`
 
 class AddComment extends React.Component {
   state = {
-    newComment: ""
+    newComment: "",
+    err: null
   };
 
   render() {
@@ -55,7 +56,10 @@ class AddComment extends React.Component {
       .then(postedComment => {
         this.props.postComment(postedComment);
       })
-      .then(this.setState({ newComment: "" }));
+      .then(this.setState({ newComment: "" }))
+      .catch(err => {
+        this.setState({ err });
+      });
   };
 }
 

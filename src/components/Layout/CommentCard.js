@@ -32,9 +32,9 @@ const CommentCard = ({
           <Card.Title>{body}</Card.Title>
           <Card.Subtitle>User: {author}</Card.Subtitle>
           <Card.Text>{created_at}</Card.Text>
-          <Card.Text>Votes: {votes}</Card.Text>
         </Card.Body>
         <div className="commentButtonContainer">
+          <Vote votes={votes} loggedInAs={loggedInAs} comment_id={comment_id} />
           <Button
             className="deleteIcon"
             disabled={loggedInAs !== author}
@@ -46,7 +46,6 @@ const CommentCard = ({
               style={{ width: "2em", height: "2em" }}
             />
           </Button>
-          <Vote />
         </div>
       </Card>
     </div>

@@ -16,12 +16,6 @@ const H3 = styled.h3`
   font-size: 1.5em;
 `;
 
-const H5 = styled.h5`
-  text-align: center;
-  font-weight: 700;
-  font-size: 1em;
-`;
-
 class Article extends React.Component {
   state = {
     article: null,
@@ -31,6 +25,7 @@ class Article extends React.Component {
 
   render() {
     const { article, isLoading, err } = this.state;
+    const { article_id } = this.props;
     if (err) return <ErrorHandler err={err} />;
     if (isLoading) return <Loading />;
     return (
@@ -38,11 +33,14 @@ class Article extends React.Component {
         <div className="articleCardSingle">
           <H2>{article.title.toUpperCase()}</H2>
           <H3>{article.body}</H3>
-          <H5>Votes: {article.votes}</H5>
-          <Vote />
+          <Vote
+            votes={article.votes}
+            loggedInAs={this.props.loggedInAs}
+            article_id={article_id}
+          />
         </div>
         <ArticleComments
-          article_id={article.article_id}
+          article_id={article_id}
           loggedInAs={this.props.loggedInAs}
         />
       </>
