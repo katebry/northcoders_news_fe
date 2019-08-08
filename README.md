@@ -30,7 +30,7 @@ For the styling, I used a combination of Bootstrap, CSS and styled-components.
 
 Front-End:
 
-- [Netlify - NCNews Round] <-- no link to project here yet
+- [Netlify - NCNews Round](https://katebry-northcodersnewsround.netlify.com/)
 - [Git repository](https://github.com/katebry/northcoders_news_fe)
 
 Back-end:
