@@ -19,7 +19,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <NavBar />
-        <Header />
+        <Header loggedInAs={loggedInAs} />
         <div
           className="AppBackground"
           style={{ background: `url(${backgroundImage})` }}
