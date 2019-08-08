@@ -3,31 +3,34 @@
 ## **NCNEWS Round**
 
 ---
-### **About** 
-This repository contains the front-end code for a news website modelled on Reddit. 
 
-It was created during my time at Northcoders, for the 'Northcoders News' front-end sprint. 
+### **About**
 
-For the styling, I used a combination of Bootstrap, CSS and styled-components. 
+This repository contains the front-end code for a news website modelled on Reddit.
 
----
-### **Set-Up** 
+It was created during my time at Northcoders, for the 'Northcoders News' front-end sprint.
 
-**1.** Fork then clone the repository onto your local machine. 
-
-**2.** Install dependencies by using the `npm install` command. 
-
-**3.** Run the `npm start` command in your terminal to run the repository locally. 
-
-**4.** To stop running the server, use the keys ctrl + c. 
+For the styling, I used a combination of Bootstrap, CSS and styled-components.
 
 ---
 
-### **Project Links** 
- 
+### **Set-Up**
+
+**1.** Fork then clone the repository onto your local machine.
+
+**2.** Install dependencies by using the `npm install` command.
+
+**3.** Run the `npm start` command in your terminal to run the repository locally.
+
+**4.** To stop running the server, use ctrl + c.
+
+---
+
+### **Project Links**
+
 Front-End:
 
-- [Netlify - NCNews Round] <-- no link to project here yet 
+- [Netlify - NCNews Round] <-- no link to project here yet
 - [Git repository](https://github.com/katebry/northcoders_news_fe)
 
 Back-end:
@@ -37,7 +40,7 @@ Back-end:
 
 ---
 
-### **Built With** 
+### **Built With**
 
 **-** React<br/>
 **-** Axios<br/>
@@ -45,7 +48,6 @@ Back-end:
 
 ---
 
-### **Author** 
+### **Author**
 
-Kate Bryan 
-
+Kate Bryan
