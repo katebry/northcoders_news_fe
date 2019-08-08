@@ -16,6 +16,13 @@ const H3 = styled.h3`
   font-size: 1.5em;
 `;
 
+const H6 = styled.h6`
+  display: flex;
+  justify-content: flex-end;
+  padding: 0.3em;
+  font-size: 0.8em;
+`;
+
 class Article extends React.Component {
   state = {
     article: null,
@@ -28,11 +35,15 @@ class Article extends React.Component {
     const { article_id } = this.props;
     if (err) return <ErrorHandler err={err} />;
     if (isLoading) return <Loading />;
+    const postedDate = new Date(article.created_at).toDateString();
     return (
       <>
         <div className="articleCardSingle">
           <H2>{article.title.toUpperCase()}</H2>
           <H3>{article.body}</H3>
+          <H6>
+            Posted: {postedDate} by {article.author}{" "}
+          </H6>
           <Vote
             votes={article.votes}
             loggedInAs={this.props.loggedInAs}
