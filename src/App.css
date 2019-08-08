@@ -20,10 +20,10 @@
   grid-auto-rows: minmax(100px auto);
 }
 
-.commentBox {
-  display: grid;
-  padding: 1em;
-  grid-template-columns: 1fr 1fr 1fr;
+.commentInputBox {
+  width: 50%;
+  height: 2em;
+  border-radius: 5px;
 }
 
 .buttonContainer {

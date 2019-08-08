@@ -3,14 +3,21 @@ import * as api from "../../api";
 import styled from "styled-components";
 
 const Input = styled.input`
-  display: inline-block;
+  font-weight: 700;
   border: 2px solid black;
-  border-radius: 3px;
-  margin: 1em;
+  border-radius: 5px;
   max-width: 6em;
+  max-height: 2em;
   &:hover {
     background: rgba(195, 18, 49, 1);
   }
+`;
+
+const Form = styled.form`
+  display: grid;
+  grid-rows: 1fr 1fr 1fr;
+  justify-items: center;
+  grid-row-gap: 4px;
 `;
 
 class AddComment extends React.Component {
@@ -21,20 +28,17 @@ class AddComment extends React.Component {
 
   render() {
     return (
-      <form className="commentBox" onSubmit={this.handleSubmit}>
-        <label>
-          Comment:{" "}
-          <input
-            className="inputBox"
-            required
-            type="text"
-            value={this.state.newComment}
-            placeholder="Add a new comment..."
-            onChange={this.handleChange}
-          />
-        </label>
+      <Form onSubmit={this.handleSubmit}>
+        <input
+          className="commentInputBox"
+          required
+          type="text"
+          value={this.state.newComment}
+          placeholder="Add a new comment..."
+          onChange={this.handleChange}
+        />
         <Input className="submitButton" type="submit" value="Submit" />
-      </form>
+      </Form>
     );
   }
 
