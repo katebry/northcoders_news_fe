@@ -25,13 +25,16 @@ const CommentCard = ({
   comment_id,
   removeComment
 }) => {
+  const postedDate = new Date(created_at).toDateString();
   return (
     <div className="commentCard">
       <Card>
         <Card.Body>
           <Card.Title>{body}</Card.Title>
           <Card.Subtitle>User: {author}</Card.Subtitle>
-          <Card.Text>{created_at}</Card.Text>
+          <Card.Text>
+            <small className="text-muted">Posted: {postedDate}</small>
+          </Card.Text>
         </Card.Body>
         <div className="commentButtonContainer">
           <Vote votes={votes} loggedInAs={loggedInAs} comment_id={comment_id} />

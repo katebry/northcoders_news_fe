@@ -10,6 +10,7 @@ const ArticleCard = ({
   votes,
   created_at
 }) => {
+  const postedDate = new Date(created_at).toDateString();
   return (
     <div className="articleCard">
       <Card>
@@ -22,7 +23,9 @@ const ArticleCard = ({
           <Card.Text>
             <Link to={`/articles/topics/${topic}`}>{topic}</Link>
           </Card.Text>
-          <Card.Text>{created_at}</Card.Text>
+          <Card.Text>
+            <small className="text-muted">Posted: {postedDate}</small>
+          </Card.Text>
         </Card.Body>
       </Card>
     </div>
