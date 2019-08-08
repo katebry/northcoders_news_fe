@@ -32,7 +32,7 @@ Front-End:
 
 Back-end:
 
-- [Heroku - MC News](https://ncnews-round.herokuapp.com/api)
+- [Heroku - NCNews Round](https://ncnews-round.herokuapp.com/api)
 - [Git repository](https://github.com/katebry/northcoders_news_be)
 
 ---
