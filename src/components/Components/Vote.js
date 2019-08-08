@@ -35,20 +35,18 @@ class Vote extends React.Component {
       <>
         <H5>Votes: {votes + voteChange}</H5>
         <div className="buttonContainer">
-          <Button>
+          <Button disabled={!loggedInAs || voteChange > 0}>
             <img
-              disabled={!loggedInAs || voteChange >= 1}
               src={likeicon}
               alt="thumbs up - like button"
-              onClick={() => this.vote(1)}
+              onClick={() => this.handleVote(1)}
             />
           </Button>
-          <Button>
+          <Button disabled={!loggedInAs || voteChange < 0}>
             <img
               src={dislikeicon}
               alt="thumbs down - dislike button"
-              onClick={() => this.vote(-1)}
-              disabled={!loggedInAs || voteChange <= -1}
+              onClick={() => this.handleVote(-1)}
             />
           </Button>
         </div>
@@ -56,7 +54,7 @@ class Vote extends React.Component {
     );
   }
 
-  vote = increment => {
+  handleVote = increment => {
     const { article_id, comment_id } = this.props;
     if (article_id) {
       api.patchVoteToArticle(article_id, increment).catch(err =>
