@@ -39,9 +39,9 @@ Back-end:
 
 ### **Built With** 
 
-**-** React
-**-** Axios
-**-** @reach/router
+**-** React . 
+**-** Axios . 
+**-** @reach/router . 
 
 ---
 
