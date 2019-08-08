@@ -19,7 +19,7 @@ For the styling, I used a combination of Bootstrap, CSS and styled-components.
 
 **3.** Run the `npm start` command in your terminal to run the repository locally. 
 
-**4.** To stop running the server, use the keys ctl + c. 
+**4.** To stop running the server, use the keys ctrl + c. 
 
 ---
 
