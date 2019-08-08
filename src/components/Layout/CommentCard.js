@@ -31,9 +31,10 @@ const CommentCard = ({
       <Card>
         <Card.Body>
           <Card.Title>{body}</Card.Title>
-          <Card.Subtitle>User: {author}</Card.Subtitle>
           <Card.Text>
-            <small className="text-muted">Posted: {postedDate}</small>
+            <small className="text-muted">
+              Posted: {postedDate} by {author}
+            </small>
           </Card.Text>
         </Card.Body>
         <div className="commentButtonContainer">
