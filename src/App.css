@@ -4,6 +4,12 @@
   font-family: "Roboto Slab", "serif";
 }
 
+.articleRow .articleCard .votesRow {
+  display: flex;
+  justify-content: center;
+  font-size: 0.75em;
+}
+
 .articleRow .articleCard {
   display: grid;
   grid-template-columns: 3fr 1fr;
