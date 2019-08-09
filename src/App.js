@@ -8,12 +8,12 @@ import Homepage from "./components/Components/Homepage";
 import Article from "../src/components/Components/Article";
 import Articles from "../src/components/Components/Articles";
 import NoMatch from "../src/components/ErrorHandling/NoMatch";
-import backgroundImage from "../src/components/Layout/NCNEWS-background-pattern.png";
 
 class App extends React.Component {
   state = {
     loggedInAs: "jessjelly"
   };
+
   render() {
     const { loggedInAs } = this.state;
     return (
@@ -22,10 +22,7 @@ class App extends React.Component {
           <NavBar />
           <Header loggedInAs={loggedInAs} />
         </div>
-        <div
-          className="AppBackground"
-          style={{ background: `url(${backgroundImage})` }}
-        >
+        <div className="AppBackground">
           <div className="siteBody">
             <Router>
               <Homepage path="/" loggedInAs={loggedInAs} />
