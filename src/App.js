@@ -24,7 +24,7 @@ class App extends React.Component {
         </div>
         <div className="AppBackground">
           <div className="siteBody">
-            <Router>
+            <Router primary={false}>
               <Homepage path="/" loggedInAs={loggedInAs} />
               <Articles path="/articles" loggedInAs={loggedInAs} />
               <Articles
