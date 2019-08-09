@@ -7,6 +7,8 @@ const Div = styled.div`
   justify-content: center;
   height: 2em;
   font-size: 1.75em;
+  font-weight: 700;
+  background-color: rgb(196, 20, 53);
 `;
 
 const DeleteCommentPopUp = ({ isDeleted }) => {
