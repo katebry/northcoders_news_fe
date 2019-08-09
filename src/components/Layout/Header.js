@@ -1,5 +1,5 @@
 import React from "react";
-import headerBackground from "./NCNewsHeaderBg.png";
+import headerBackground from "../Media/NCNEWS-header-bg.png";
 import styled from "styled-components";
 
 const SiteHeader = styled.header`

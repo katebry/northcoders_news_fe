@@ -1,7 +1,7 @@
 import React from "react";
 import { Card } from "react-bootstrap";
-import deleteicon from "./deleteicon.png";
 import Vote from "../Components/Vote";
+import deleteicon from "../Media/deleteicon.png";
 import styled from "styled-components";
 
 const Button = styled.button`

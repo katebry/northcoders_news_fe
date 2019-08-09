@@ -1,8 +1,8 @@
 import React from "react";
 import * as api from "../../api";
 import ErrorHandler from "../ErrorHandling/ErrorHandler";
-import likeicon from "../Layout/likeicon.png";
-import dislikeicon from "../Layout/dislikeicon.png";
+import likeicon from "../Media/likeicon.png";
+import dislikeicon from "../Media/dislikeicon.png";
 import styled from "styled-components";
 
 const H5 = styled.h5`
