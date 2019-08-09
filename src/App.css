@@ -4,8 +4,15 @@
   font-family: "Roboto Slab", "serif";
 }
 
+.AppBackground {
+  background: url("./components/Media/NCNEWS-background-pattern.png");
+  min-height: 100%;
+  min-width: 100%;
+  position: absolute;
+}
+
 .siteBody {
-  margin-top: 11.5em;
+  margin-top: 12.5em;
 }
 
 .articleRow .articleCard .votesRow {
@@ -62,9 +69,8 @@
 }
 
 .loadingGif {
-  display: grid;
-  justify-items: center;
-  margin: auto;
+  display: flex;
+  justify-content: center;
 }
 
 .navBar {

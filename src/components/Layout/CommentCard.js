@@ -23,7 +23,8 @@ const CommentCard = ({
   votes,
   loggedInAs,
   comment_id,
-  removeComment
+  removeComment,
+  triggerPopUp
 }) => {
   const postedDate = new Date(created_at).toDateString();
   return (
@@ -42,7 +43,10 @@ const CommentCard = ({
           <Button
             className="deleteIcon"
             disabled={loggedInAs !== author}
-            onClick={() => removeComment(comment_id)}
+            onClick={() => {
+              removeComment(comment_id);
+              triggerPopUp();
+            }}
           >
             <img
               src={deleteicon}

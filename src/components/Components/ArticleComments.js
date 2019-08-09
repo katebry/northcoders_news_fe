@@ -4,20 +4,23 @@ import Loading from "./Loading";
 import ErrorHandler from "../ErrorHandling/ErrorHandler";
 import CommentCard from "../Layout/CommentCard";
 import AddComment from "./AddComment";
+import DeleteCommentPopUp from "./DeleteCommentPopUp";
 
 class ArticleComments extends React.Component {
   state = {
     comments: null,
     isLoading: true,
+    isDeleted: false,
     err: null
   };
 
   render() {
-    const { comments, isLoading, err } = this.state;
+    const { comments, isLoading, err, isDeleted } = this.state;
     if (err) return <ErrorHandler err={err} />;
     if (isLoading) return <Loading />;
     return (
       <>
+        {isDeleted ? <DeleteCommentPopUp isDeleted={true} /> : null}
         <AddComment
           newComment={this.newComment}
           handleSubmit={this.handleSubmit}
@@ -37,6 +40,7 @@ class ArticleComments extends React.Component {
                 votes={comment.votes}
                 loggedInAs={this.props.loggedInAs}
                 removeComment={this.removeComment}
+                triggerPopUp={this.triggerPopUp}
               />
             ))
           ) : (
@@ -58,6 +62,10 @@ class ArticleComments extends React.Component {
         this.setState({ err });
       });
   }
+
+  triggerPopUp = () => {
+    this.setState({ isDeleted: true });
+  };
 
   postComment = newComment => {
     this.setState(state => {
