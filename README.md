@@ -6,11 +6,16 @@
 
 ### **About**
 
-This repository contains the front-end code for a news website modelled on Reddit.
+This repository contains the front-end code for a news website modelled on Reddit; it was created during my time at Northcoders.
 
-It was created during my time at Northcoders, for the 'Northcoders News' front-end sprint.
+The front-end of the website was built with React. For the styling, I used a combination of Bootstrap, CSS and styled-components.
 
-For the styling, I used a combination of Bootstrap, CSS and styled-components.
+---
+
+### **Requirements**
+
+**1.** Node v12.3.1
+**2.** Npm 6.9.2
 
 ---
 
@@ -42,9 +47,9 @@ Back-end:
 
 ### **Built With**
 
-**-** React<br/>
-**-** Axios<br/>
-**-** @reach/router<br/>
+**-** React v16.8.6<br/>
+**-** Axios v0.19.0<br/>
+**-** @reach/router v1.2.1<br/>
 
 ---
 
