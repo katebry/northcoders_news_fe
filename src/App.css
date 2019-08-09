@@ -4,6 +4,10 @@
   font-family: "Roboto Slab", "serif";
 }
 
+.siteBody {
+  margin-top: 11.5em;
+}
+
 .articleRow .articleCard .votesRow {
   display: flex;
   justify-content: center;
@@ -71,4 +75,12 @@
   width: 100%;
   border: 2px solid white;
   border-radius: 5px;
+}
+
+.siteHeaders {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  overflow: hidden;
+  z-index: 1;
 }

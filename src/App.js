@@ -18,19 +18,26 @@ class App extends React.Component {
     const { loggedInAs } = this.state;
     return (
       <div className="App">
-        <NavBar />
-        <Header loggedInAs={loggedInAs} />
+        <div className="siteHeaders">
+          <NavBar />
+          <Header loggedInAs={loggedInAs} />
+        </div>
         <div
           className="AppBackground"
           style={{ background: `url(${backgroundImage})` }}
         >
-          <Router>
-            <Homepage path="/" loggedInAs={loggedInAs} />
-            <Articles path="/articles" loggedInAs={loggedInAs} />
-            <Articles path="/articles/topics/:topic" loggedInAs={loggedInAs} />
-            <Article path="/articles/:article_id" loggedInAs={loggedInAs} />
-            <NoMatch default status="404" msg="Non-existent path" />
-          </Router>
+          <div className="siteBody">
+            <Router>
+              <Homepage path="/" loggedInAs={loggedInAs} />
+              <Articles path="/articles" loggedInAs={loggedInAs} />
+              <Articles
+                path="/articles/topics/:topic"
+                loggedInAs={loggedInAs}
+              />
+              <Article path="/articles/:article_id" loggedInAs={loggedInAs} />
+              <NoMatch default status="404" msg="Non-existent path" />
+            </Router>
+          </div>
         </div>
       </div>
     );
