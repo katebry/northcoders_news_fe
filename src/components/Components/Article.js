@@ -32,7 +32,7 @@ class Article extends React.Component {
 
   render() {
     const { article, isLoading, err } = this.state;
-    const { article_id } = this.props;
+    const { article_id, loggedInAs } = this.props;
     if (err) return <ErrorHandler err={err} />;
     if (isLoading) return <Loading />;
     const postedDate = new Date(article.created_at).toDateString();
@@ -46,14 +46,11 @@ class Article extends React.Component {
           </H6>
           <Vote
             votes={article.votes}
-            loggedInAs={this.props.loggedInAs}
+            loggedInAs={loggedInAs}
             article_id={article_id}
           />
         </div>
-        <ArticleComments
-          article_id={article_id}
-          loggedInAs={this.props.loggedInAs}
-        />
+        <ArticleComments article_id={article_id} loggedInAs={loggedInAs} />
       </>
     );
   }

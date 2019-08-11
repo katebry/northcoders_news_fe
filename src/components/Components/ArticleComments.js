@@ -16,6 +16,7 @@ class ArticleComments extends React.Component {
 
   render() {
     const { comments, isLoading, err, isDeleted } = this.state;
+    const { article_id, loggedInAs } = this.props;
     if (err) return <ErrorHandler err={err} />;
     if (isLoading) return <Loading />;
     return (
@@ -24,8 +25,8 @@ class ArticleComments extends React.Component {
         <AddComment
           newComment={this.newComment}
           handleSubmit={this.handleSubmit}
-          article_id={this.props.article_id}
-          loggedInAs={this.props.loggedInAs}
+          article_id={article_id}
+          loggedInAs={loggedInAs}
           postComment={this.postComment}
         />
         <div className="commentRow">
