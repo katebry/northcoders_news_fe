@@ -15,7 +15,7 @@ The front-end of the website was built with React. For the styling, I used a com
 ### **Requirements**
 
 **1.** Node v12.3.1<br/>
-**2.** Npm 6.9.2<br/>
+**2.** Npm v6.9.2<br/>
 
 ---
 
