@@ -10,7 +10,7 @@ This repository contains the front-end code for a news website modelled on Reddi
 
 The front-end of the website was built with React and feeds into code I previously created (see 'Project Links' section for the link to the back-end repo). For the styling, I used a combination of Bootstrap, CSS and styled-components.
 
-The site is fully responsive and be viewed on a mobile/ tablet or laptop.
+The site is fully responsive and can be viewed on a mobile, tablet or laptop.
 
 ---
 
