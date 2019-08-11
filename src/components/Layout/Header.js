@@ -23,12 +23,10 @@ const H6 = styled.h6`
 
 const Header = ({ loggedInAs }) => {
   return (
-    <>
-      <SiteHeader className="siteHeader">
-        NCNews Round
-        <H6>Logged-in: {loggedInAs}</H6>
-      </SiteHeader>
-    </>
+    <SiteHeader className="siteHeader">
+      NCNews Round
+      <H6>Logged-in: {loggedInAs}</H6>
+    </SiteHeader>
   );
 };
 
