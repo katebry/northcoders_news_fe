@@ -15,12 +15,12 @@ class Articles extends React.Component {
   };
 
   render() {
-    const { articles, isLoading, err } = this.state;
+    const { articles, isLoading, err, sort_by } = this.state;
     if (err) return <ErrorHandler err={err} />;
     if (isLoading) return <Loading />;
     return (
       <>
-        <ArticleDropdown setSort={this.setSort} />
+        <ArticleDropdown setSort={this.setSort} value={sort_by} />
         <div className="articleRow">
           {articles ? (
             articles.map(article => (
