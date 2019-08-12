@@ -4,6 +4,17 @@ import Loading from "./Loading";
 import ErrorHandler from "../ErrorHandling/ErrorHandler";
 import ArticleCard from "../Layout/ArticleCard";
 import ArticleDropdown from "./ArticleDropdown";
+import styled from "styled-components";
+
+const H3 = styled.h3`
+  display: inline-block;
+  margin-left: 0.6em;
+  background: rgba(255, 255, 255, 0.85);
+  border: 3px solid rgb(30, 40, 41);
+  border-radius: 5px;
+  padding: 2px;
+  color: rgb(107, 117, 125);
+`;
 
 class Articles extends React.Component {
   state = {
@@ -21,6 +32,7 @@ class Articles extends React.Component {
     return (
       <>
         <ArticleDropdown setSort={this.setSort} value={sort_by} />
+        {this.props.topic ? <H3>nr/{`${this.props.topic}`}</H3> : null}
         <div className="articleRow">
           {articles ? (
             articles.map(article => (
