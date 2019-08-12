@@ -21,7 +21,8 @@ const ArticleCard = ({
   author,
   topic,
   votes,
-  created_at
+  created_at,
+  comment_count
 }) => {
   const postedDate = new Date(created_at).toDateString();
   return (
@@ -41,6 +42,9 @@ const ArticleCard = ({
             <small className="text-muted">
               Posted: {postedDate} by {author}
             </small>
+          </Card.Text>
+          <Card.Text>
+            <small className="text-muted">Comments: {comment_count}</small>
           </Card.Text>
         </Card.Body>
       </Card>

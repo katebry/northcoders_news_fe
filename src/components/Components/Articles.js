@@ -45,6 +45,7 @@ class Articles extends React.Component {
                 votes={article.votes}
                 created_at={article.created_at}
                 article_id={article.article_id}
+                comment_count={article.comment_count}
               />
             ))
           ) : (
