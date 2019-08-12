@@ -40,20 +40,22 @@ const CommentCard = ({
         </Card.Body>
         <div className="commentButtonContainer">
           <Vote votes={votes} loggedInAs={loggedInAs} comment_id={comment_id} />
-          <Button
-            className="deleteIcon"
-            disabled={loggedInAs !== author}
-            onClick={() => {
-              removeComment(comment_id);
-              triggerPopUp();
-            }}
-          >
-            <img
-              src={deleteicon}
-              alt="bin icon"
-              style={{ width: "2em", height: "2em" }}
-            />
-          </Button>
+          {loggedInAs === author ? (
+            <Button
+              className="deleteIcon"
+              disabled={loggedInAs !== author}
+              onClick={() => {
+                removeComment(comment_id);
+                triggerPopUp();
+              }}
+            >
+              <img
+                src={deleteicon}
+                alt="bin icon"
+                style={{ width: "2em", height: "2em" }}
+              />
+            </Button>
+          ) : null}
         </div>
       </Card>
     </div>
