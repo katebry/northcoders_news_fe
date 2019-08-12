@@ -11,10 +11,9 @@ const H3 = styled.h3`
   margin-top: 0.5em;
   margin-left: 0.6em;
   background: rgba(255, 255, 255, 0.85);
-  border: 3px solid rgb(30, 40, 41);
   border-radius: 5px;
   padding: 2px;
-  color: rgb(107, 117, 125);
+  color: rgb(30, 40, 41);
 `;
 
 class Articles extends React.Component {
