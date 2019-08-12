@@ -10,7 +10,7 @@ const H3 = styled.h3`
   display: inline-block;
   margin-top: 0.5em;
   margin-left: 0.6em;
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.7);
   border-radius: 5px;
   padding: 2px;
   color: rgb(30, 40, 41);
