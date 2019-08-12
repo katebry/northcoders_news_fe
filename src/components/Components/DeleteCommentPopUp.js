@@ -10,9 +10,15 @@ const Div = styled.div`
   background-color: rgb(196, 20, 53);
 `;
 
-const DeleteCommentPopUp = ({ isDeleted }) => {
+const DeleteCommentPopUp = ({ isDeleted, resetIsDeleted }) => {
   return (
-    <Popup open={isDeleted} closeOnDocumentClick>
+    <Popup
+      open={isDeleted}
+      closeOnDocumentClick
+      onClose={() => {
+        resetIsDeleted();
+      }}
+    >
       <Div>Comment successfully deleted!</Div>
     </Popup>
   );

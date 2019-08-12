@@ -21,7 +21,12 @@ class ArticleComments extends React.Component {
     if (isLoading) return <Loading />;
     return (
       <>
-        {isDeleted ? <DeleteCommentPopUp isDeleted={true} /> : null}
+        {isDeleted ? (
+          <DeleteCommentPopUp
+            isDeleted={true}
+            resetIsDeleted={this.resetIsDeleted}
+          />
+        ) : null}
         <AddComment
           newComment={this.newComment}
           handleSubmit={this.handleSubmit}
@@ -42,6 +47,7 @@ class ArticleComments extends React.Component {
                 loggedInAs={this.props.loggedInAs}
                 removeComment={this.removeComment}
                 triggerPopUp={this.triggerPopUp}
+                resetIsDeleted={this.resetIsDeleted}
               />
             ))
           ) : (
@@ -66,6 +72,10 @@ class ArticleComments extends React.Component {
 
   triggerPopUp = () => {
     this.setState({ isDeleted: true });
+  };
+
+  resetIsDeleted = () => {
+    this.setState({ isDeleted: false });
   };
 
   postComment = newComment => {
