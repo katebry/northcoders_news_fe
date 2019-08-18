@@ -37,7 +37,7 @@ styled-components v4.3.2<br/>
 
 ### **Set-Up**
 
-**1.** Clone the repository onto your local machine: `https://github.com/katebry/northcoders_news_fe`.
+**1.** Clone the repository onto your local machine: git clone `https://github.com/katebry/northcoders_news_fe`.
 
 **2.** Change the directory: `cd northcoders-news-fe`.
 
