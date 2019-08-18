@@ -23,13 +23,15 @@ The site is fully responsive and can be viewed on a mobile, tablet or laptop.
 
 ### **Set-Up**
 
-**1.** Fork then clone the repository onto your local machine.
+**1.** Clone the repository onto your local machine: `https://github.com/katebry/northcoders_news_fe`.
 
-**2.** Install dependencies by using the `npm install` command.
+**2.** Change the directory: `cd northcoders-news-fe`.
 
-**3.** Run the `npm start` command in your terminal to run the repository locally.
+**3.** Install dependencies by using the `npm install` command.
 
-**4.** To stop running the server, use ctrl + c.
+**4.** Run the `npm start` command in your terminal to run the repository locally.
+
+**5.** To stop running the server, use ctrl + c.
 
 ---
 
