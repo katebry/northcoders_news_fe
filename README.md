@@ -21,6 +21,20 @@ The site is fully responsive and can be viewed on a mobile, tablet or laptop.
 
 ---
 
+### **Dependencies**
+
+@reach/router v1.2.1<br/>
+axios v0.19.0<br/>
+bootstrap v4.3.1<br/>
+loading-svg v1.0.0<br/>
+react v16.8.6<br/>
+react-bootstrap v1.0.0-beta.9<br/>
+react-loading v2.0.3<br/>
+react-scripts v3.0.1<br/>
+reactjs-popup v1.4.2<br/>
+styled-components v4.3.2<br/>
+
+
 ### **Set-Up**
 
 **1.** Clone the repository onto your local machine: `https://github.com/katebry/northcoders_news_fe`.
