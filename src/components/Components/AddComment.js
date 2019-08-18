@@ -27,13 +27,14 @@ class AddComment extends React.Component {
   };
 
   render() {
+    const { newComment } = this.state;
     return (
       <Form onSubmit={this.handleSubmit}>
         <input
           className="commentInputBox"
           required
           type="text"
-          value={this.state.newComment}
+          value={newComment}
           placeholder="Add a new comment..."
           onChange={this.handleChange}
         />

@@ -54,31 +54,16 @@ class Vote extends React.Component {
 
   handleVote = increment => {
     const { article_id, comment_id } = this.props;
-    if (article_id) {
-      api.patchVoteToArticle(article_id, increment).catch(err =>
-        this.setState(({ voteChange }) => {
-          return { voteChange: voteChange - increment };
-        })
-      );
-      this.setState(prevState => {
-        return {
-          voteChange: prevState.voteChange + increment
-        };
-      });
-    } else {
-      if (comment_id) {
-        api.patchVoteToComment(comment_id, increment).catch(err =>
-          this.setState(({ voteChange }) => {
-            return { voteChange: voteChange - increment };
-          })
-        );
-        this.setState(prevState => {
-          return {
-            voteChange: prevState.voteChange + increment
-          };
-        });
-      }
-    }
+    api.patchVote(article_id, comment_id, increment).catch(err =>
+      this.setState(({ voteChange }) => {
+        return { voteChange: voteChange - increment };
+      })
+    );
+    this.setState(prevState => {
+      return {
+        voteChange: prevState.voteChange + increment
+      };
+    });
   };
 }
 

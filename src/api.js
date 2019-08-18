@@ -40,16 +40,16 @@ export const deleteCommentById = async comment_id => {
   return axios.delete(`${BASE_URL}/comments/${comment_id}`);
 };
 
-export const patchVoteToArticle = async (article_id, increment) => {
-  const { data } = await axios.patch(`${BASE_URL}/articles/${article_id}`, {
-    inc_votes: increment
-  });
-  return data.article;
-};
-
-export const patchVoteToComment = async (comment_id, increment) => {
-  const { data } = await axios.patch(`${BASE_URL}/comments/${comment_id}`, {
-    inc_votes: increment
-  });
-  return data.comment;
+export const patchVote = async (article_id, comment_id, increment) => {
+  if (article_id) {
+    const { data } = await axios.patch(`${BASE_URL}/articles/${article_id}`, {
+      inc_votes: increment
+    });
+    return data.article;
+  } else {
+    const { data } = await axios.patch(`${BASE_URL}/comments/${comment_id}`, {
+      inc_votes: increment
+    });
+    return data.comment;
+  }
 };
